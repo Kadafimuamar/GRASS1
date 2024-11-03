@@ -16,6 +16,16 @@ proxy_list_url = 'https://raw.githubusercontent.com/ErcinDedeoglu/proxies/main/p
 output_file = 'active_proxies.txt'
 user_ids_file = 'users.txt'
 
+def print_banner():
+    banner = """
+    \033[1;32m===========================================\033[0m
+    \033[1;34m|            KELAS MALAM XYZ              |\033[0m
+    \033[1;36m|    GRASS AUTO FARMING + SCRAP PROXY     |\033[0m
+    \033[1;32m===========================================\033[0m
+    \033[1;33m@DonsPabloXYZ @KelasMalamXYZ\033[0m
+    """
+    print(banner)
+
 def check_proxy(proxy):
     try:
         session = requests.Session()
@@ -154,8 +164,13 @@ def perform_job():
 
 schedule.every(24).hours.do(perform_job)
 
-perform_job()
-
-while True:
-    schedule.run_pending()
-    time.sleep(1)
+if __name__ == "__main__":
+    print_banner()
+    choice = input("    Run script? [y/n]: ").strip().lower()
+    if choice == 'y':
+        perform_job()
+        while True:
+            schedule.run_pending()
+            time.sleep(1)
+    else:
+        print("Script tidak dijalankan.")
