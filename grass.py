@@ -12,7 +12,7 @@ from loguru import logger
 import schedule
 
 test_url = 'https://www.google.com'
-proxy_list_url = 'https://raw.githubusercontent.com/ErcinDedeoglu/proxies/main/proxies/socks5.txt'
+proxy_list_url = 'https://raw.githubusercontent.com/TheSpeedX/SOCKS-List/master/socks5.txt'
 output_file = 'active_proxies.txt'
 user_ids_file = 'users.txt'
 
